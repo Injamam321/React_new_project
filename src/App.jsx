@@ -1,4 +1,7 @@
 import './App.css'
+import Root from './components/root'
+
+
 
 function App() {
 
@@ -6,8 +9,8 @@ function App() {
 
       <div>
 
-        <h1 className='bg-green-400'>hello imjamam: you are so cute </h1>
-        
+        <Root/>
+
       </div>
   )
 
