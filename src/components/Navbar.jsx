@@ -11,13 +11,12 @@ export const Navbar = () => {
 
     return (
 
-        <nav className='bg-green-700 text-white py-4 md:py-8'>
+        <nav className='bg-green-700 text-white py-4 md:py-8 relative '>
             <div className='container mx-auto flex justify-between items-center'>
-                <h4>React Project</h4>
+                <h4 className="text-2xl font-bold">React Project</h4>
 
                 {/*Mobile menu bar */}
-
-                <div>
+                <div className="md:hidden">
                     <button onClick={toggleMenu}>
                         {
                             isOpen ? <IoClose /> : <FaBars />
@@ -27,7 +26,7 @@ export const Navbar = () => {
                     </button>
                 </div>
 
-                <ul className='flex space-x-4 md:space-x-6'>
+                <ul className='hidden md:flex space-x-4 md:space-x-6'>
                     <li>Home</li>
                     <li>Products</li>
                     <li>Blogs</li>
@@ -36,7 +35,25 @@ export const Navbar = () => {
                 </ul>
 
 
-                <button> Login </button>
+                <button className="hidden md:block"> Login </button>
+
+                { /*Mobile menu collapse */}
+
+                <div className="md:hidden w-full absolute bg-green-500 top-full left-0">
+                    <ul className='flex flex-col items-center py-4'>
+                        <li>Home</li>
+                        <li>Products</li>
+                        <li>Blogs</li>
+                        <li>Contacts</li>
+                        <li>About</li>
+
+                        <li>
+                            <button className="hidden md:block"> Login </button>
+                        </li>
+                    </ul>
+
+                </div>
+
             </div>
         </nav>
 
