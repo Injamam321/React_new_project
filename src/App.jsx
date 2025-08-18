@@ -7,13 +7,13 @@ function App() {
 
   return (
 
-      <div>
+    <div>
 
-        <Root/>
+      <Root />
 
-      </div>
+    </div>
   )
 
 }
-      
+
 export default App

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,11 +28,12 @@ export const Navbar = () => {
                 </div>
 
                 <ul className='hidden md:flex space-x-4 md:space-x-6'>
-                    <li>Home</li>
-                    <li>Products</li>
-                    <li>Blogs</li>
-                    <li>Contacts</li>
-                    <li>About</li>
+                    <li>    <Link>Home</Link> </li>
+                    <li>    <Link>Products</Link>  </li>
+                    <li>    <Link>Blogs</Link>  </li>
+                    <li>    <Link>Contacts</Link>   </li>
+                    <li>    <Link>About</Link></li>
+
                 </ul>
 
 
@@ -46,6 +48,7 @@ export const Navbar = () => {
                         <li>Blogs</li>
                         <li>Contacts</li>
                         <li>About</li>
+
 
                         <li>
                             <button className="hidden md:block"> Login </button>
