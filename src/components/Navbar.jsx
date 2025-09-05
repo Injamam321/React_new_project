@@ -28,20 +28,24 @@ export const Navbar = () => {
                 </div>
 
                 <ul className='hidden md:flex space-x-4 md:space-x-6'>
-                    <li>    <Link>Home</Link> </li>
-                    <li>    <Link>Products</Link>  </li>
-                    <li>    <Link>Blogs</Link>  </li>
-                    <li>    <Link>Contacts</Link>   </li>
-                    <li>    <Link>About</Link></li>
+                    <li>    <Link to={'/'} className="hover:text-red-900"> Home </Link> </li>
+                    <li>    <Link to={'products'} className="hover:text-red-900"> Products </Link>  </li>
+                    <li>    <Link to={'blogs'} className="hover:text-red-900"> Blogs </Link>  </li>
+                    <li>    <Link to={'contact'} className="hover:text-red-900"> Contacts </Link>   </li>
+                    <li>    <Link to={'about'} className="hover:text-red-900"> About </Link></li>
 
                 </ul>
 
 
-                <button className="hidden md:block"> Login </button>
+                <button className="hidden md:block  text-black bg-white px-4 py-1 rounded cursor-pointer" > Login </button>
+
+
 
                 { /*Mobile menu collapse */}
 
-                <div className="md:hidden w-full absolute bg-green-500 top-full left-0">
+                <div className="md:hidden w-full absolute bg-green-500 top-full left-0 ${isOpen ? 'block : hidden'">
+
+
                     <ul className='flex flex-col items-center py-4'>
                         <li>Home</li>
                         <li>Products</li>
