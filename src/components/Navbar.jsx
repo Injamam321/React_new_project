@@ -12,7 +12,7 @@ export const Navbar = () => {
 
     return (
 
-        <nav className='bg-green-700 text-white py-4 md:py-8 relative '>
+        <nav className='bg-green-700 text-white py-4 md:py-8 relative border-b-2 border-green-500'>
             <div className='container mx-auto flex justify-between items-center'>
                 <h4 className="text-2xl font-bold">React Project</h4>
 
@@ -37,7 +37,7 @@ export const Navbar = () => {
                 </ul>
 
 
-                <button className="hidden md:block  text-black bg-white px-4 py-1 rounded cursor-pointer" > Login </button>
+                <button className="hidden md:block  text-black bg-white px-4 py-1 rounded cursor-pointer hover:bg-slate-400" > Login </button>
 
 
 
@@ -46,16 +46,16 @@ export const Navbar = () => {
                 <div className="md:hidden w-full absolute bg-green-500 top-full left-0 ${isOpen ? 'block : hidden'">
 
 
-                    <ul className='flex flex-col items-center py-4'>
-                        <li>Home</li>
-                        <li>Products</li>
-                        <li>Blogs</li>
-                        <li>Contacts</li>
-                        <li>About</li>
+                    <ul className='flex flex-col items-center py-4 space-y-4'>
+                        <li className="hover:text-red-900">Home</li>
+                        <li className="hover:text-red-900">Products</li>
+                        <li className="hover:text-red-900">Blogs</li>
+                        <li className="hover:text-red-900">Contacts</li>
+                        <li className="hover:text-red-900">About</li>
 
 
                         <li>
-                            <button className="hidden md:block"> Login </button>
+                            <button className="text-black bg-white px-4 py-1 rounded cursor-pointer hover:bg-slate-400"> Login </button>
                         </li>
                     </ul>
 
