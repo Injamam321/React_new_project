@@ -12,7 +12,7 @@ export const Navbar = () => {
 
     return (
 
-        <nav className='bg-green-700 text-white py-4 md:py-8 relative border-b-2 border-green-500'>
+        <nav className='bg-green-700 text-white py-4 md:py-8 sticky top-0 border-b-2 border-green-500'>
             <div className='container mx-auto flex justify-between items-center'>
                 <h4 className="text-2xl font-bold">React Project</h4>
 
