@@ -1,5 +1,6 @@
 import './App.css'
-import Root from './components/root'
+import Root from './components/layout/Root'
+
 
 
 

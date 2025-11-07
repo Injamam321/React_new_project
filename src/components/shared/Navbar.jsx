@@ -101,8 +101,14 @@ export const Navbar = () => {
 
                 </ul>
 
+                <Link to={'/login'} >
 
-                <button className="hidden md:block  text-black bg-white px-4 py-1 rounded cursor-pointer hover:bg-slate-400" > Login </button>
+                    <button className="hidden md:block  text-black bg-white px-4 py-1 rounded cursor-pointer hover:bg-slate-400" > Login </button>
+
+                </Link>
+
+
+
 
 
 
