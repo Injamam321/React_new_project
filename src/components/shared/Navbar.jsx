@@ -31,7 +31,7 @@ export const Navbar = () => {
                 <h4 className="text-2xl font-bold">React Project</h4>
 
                 {/*Mobile menu bar */}
-                <div className="md:hidden">
+                <div className="md:hidden ml-auto">
                     <button onClick={toggleMenu}>
                         {
                             isOpen ? <IoMdClose /> : <FaBars />
