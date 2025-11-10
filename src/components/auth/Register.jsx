@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 
 const Register = () => {
+    const [showPass, setShowPass] = useState(false);
+    const [confirmPass, setConfirmPass] = useState(false);
+
+
     return (
         <div>
 
-            <div className='flex items-center justify-center h-[100vh] px-4 bg-green-950 '>
+            <div className='flex items-center justify-center h-[100vh] px-4 pt-5 bg-green-950 '>
 
                 <div className=' bg-white max-w-lg p-8 rounded-2xl'>
                     <h2 className='text-green-800 font-bold text-center text-2xl p-8 mb-6'> Register </h2>
@@ -18,27 +23,58 @@ const Register = () => {
                             placeholder='Write Your Full Name'
                             className='w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500'
                             name=""
-                            id="" />
+                            id=""
+                            required
+                        />
                         <input
                             type="Email"
                             placeholder='Write Your Email'
                             className='w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500'
                             name=""
-                            id="" />
+                            id=""
+                            required
+                        />
 
-                        <input
-                            type="Password"
-                            placeholder='Password'
-                            className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
-                            name=""
-                            id="" />
+                        {/* only password  */}
+                        <div className='relative flex items-center'>
+                            <input
+                                type={showPass ? 'text ' : 'password'}
+                                placeholder='Password'
+                                className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
+                                name=""
+                                id=""
+                                required
+                            />
 
-                        <input
-                            type="Password"
-                            placeholder='Confirm Password'
-                            className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
-                            name=""
-                            id="" />
+                            {
+                                showPass ? <FaEyeSlash onClick={() => setShowPass(!showPass)} className='absolute right-3 cursor-pointer  hover:text-green-600' />
+                                    :
+                                    <FaEye onClick={() => setShowPass(!showPass)} className='absolute right-3 cursor-pointer  hover:text-green-600' />
+                            }
+
+                        </div>
+
+                        {/* confirm password */}
+
+                        <div className='flex relative items-center'>
+                            <input
+                                type={confirmPass ? 'text ' : 'password'}
+                                placeholder='Confirm Password'
+                                className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
+                                name=""
+                                id=""
+                                required
+                            />
+
+                            {
+                                confirmPass ? <FaEyeSlash onClick={() => setConfirmPass(!confirmPass)} className='absolute right-3 cursor-pointer hover:text-green-600' />
+                                    :
+                                    <FaEye onClick={() => setConfirmPass(!confirmPass)} className='absolute right-3 cursor-pointer  hover:text-green-600' />
+                            }
+
+
+                        </div>
+
 
                         <div className='flex items-center justify-between'>
                             <p>
@@ -46,6 +82,7 @@ const Register = () => {
                                     type="checkbox"
                                     name=""
                                     id="checkbox"
+                                    required
                                 />
 
                                 <label htmlFor="checkBox"> Accept Terms & <Link className='text-green-500'> Condition </Link></label>

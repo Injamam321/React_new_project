@@ -4,7 +4,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
     return (
-        <div className='flex items-center justify-center h-[80vh] px-4 bg-green-950 '>
+        <div className='flex items-center justify-center h-[100vh] px-4 pt-5 bg-green-950 '>
 
             <div className=' bg-white max-w-sm p-8 rounded-2xl text-white'>
                 <h2 className='text-green-800 font-bold text-center text-2xl p-8 mb-6'> Login </h2>

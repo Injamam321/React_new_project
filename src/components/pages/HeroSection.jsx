@@ -8,7 +8,7 @@ const HeroSection = () => {
 
         //<div className="flex flex-col items-center justify-center h-[90vh] text-center bg-gradient-to-r from-orange-400 via-pink-500 to-rose-500 text-white">
 
-        <div className="flex flex-col items-center justify-center h-[90vh] text-center bg-gradient-to-r from-teal-400 via-emerald-500 to-green-500 text-white">
+        <div className="flex flex-col items-center justify-center h-[100vh] text-center bg-gradient-to-r from-teal-400 via-emerald-500 to-green-500 text-white">
 
             {/* //<div className="flex flex-col items-center justify-center h-[90vh] text-center bg-gradient-to-r from-slate-800 via-blue-800 to-sky-500 text-white"> */}
 
