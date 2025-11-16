@@ -2,11 +2,35 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/firebase.config';
 
 
 const Register = () => {
     const [showPass, setShowPass] = useState(false);
     const [confirmPass, setConfirmPass] = useState(false);
+
+    const handleRegisterForm = (e) => {
+        e.preventDefault();
+
+        const fullName = e.target.Name.value;
+        const email = e.target.Email.value;
+        const password = e.target.Password.value;
+        const confirmpassword = e.target.Confirmpassword.value;
+
+
+
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+
+    }
 
 
     return (
@@ -17,20 +41,21 @@ const Register = () => {
                 <div className=' bg-white max-w-lg p-8 rounded-2xl'>
                     <h2 className='text-green-800 font-bold text-center text-2xl p-8 mb-6'> Register </h2>
 
-                    <form className='space-y-4'>
+                    <form onSubmit={handleRegisterForm} className='space-y-4'>
                         <input
-                            type="Email"
+                            type="text"
                             placeholder='Write Your Full Name'
                             className='w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500'
-                            name=""
+                            name="Name"
                             id=""
                             required
                         />
+
                         <input
                             type="Email"
                             placeholder='Write Your Email'
                             className='w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500'
-                            name=""
+                            name="Email"
                             id=""
                             required
                         />
@@ -38,10 +63,10 @@ const Register = () => {
                         {/* only password  */}
                         <div className='relative flex items-center'>
                             <input
-                                type={showPass ? 'text ' : 'password'}
+                                type={showPass ? 'text' : 'password'}
                                 placeholder='Password'
                                 className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
-                                name=""
+                                name="Password"
                                 id=""
                                 required
                             />
@@ -58,10 +83,10 @@ const Register = () => {
 
                         <div className='flex relative items-center'>
                             <input
-                                type={confirmPass ? 'text ' : 'password'}
+                                type={confirmPass ? 'text' : 'password'}
                                 placeholder='Confirm Password'
                                 className='w-full border px-4 py-2 rounded focus: outline-none focus:ring-2 focus:ring-green-500'
-                                name=""
+                                name="Confirmpassword"
                                 id=""
                                 required
                             />
